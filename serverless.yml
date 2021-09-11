@@ -1,0 +1,26 @@
+service: compressImageSetup
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-1
+
+functions:
+  hello:
+    handler: src/functions/hello.handler
+    events:
+      -
+        http:
+          path: compressImageSetup/hello
+          method: get
+  copy:
+    handler: src/functions/copy.handler
+    events:
+      -
+        s3:
+# This will create a new bucket with name test-uncompressed
+          bucket: test-uncompressed
+          event: s3:ObjectCreated:*
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
