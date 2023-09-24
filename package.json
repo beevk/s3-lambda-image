@@ -15,7 +15,7 @@
     "@types/aws-lambda": "^8.10.83",
     "@types/serverless": "^1.78.35",
     "serverless": "^3.34.0",
-    "serverless-offline": "^8.1.0",
+    "serverless-offline": "^12.0.4",
     "serverless-plugin-typescript": "^2.0.0"
   },
   "dependencies": {
